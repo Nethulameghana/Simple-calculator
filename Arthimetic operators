@@ -1,0 +1,50 @@
+def add(x, y):
+  """Adds two numbers and returns the sum."""
+  return x + y
+
+def subtract(x, y):
+  """Subtracts two numbers and returns the difference."""
+  return x - y
+
+def multiply(x, y):
+  """Multiplies two numbers and returns the product."""
+  return x * y
+
+def divide(x, y):
+  """Divides two numbers and returns the quotient, handling division by zero."""
+  if y == 0:
+    return "Error: Cannot divide by zero."
+  else:
+    return x / y
+
+while True:
+  # Get user input for first number
+  num1 = float(input("Enter the first number: "))
+
+  # Get user input for operator
+  operator = input("Enter an operator (+, -, *, /): ")
+
+  # Get user input for second number
+  num2 = float(input("Enter the second number: "))
+
+  # Perform calculation based on operator
+  if operator == "+":
+    result = add(num1, num2)
+  elif operator == "-":
+    result = subtract(num1, num2)
+  elif operator == "*":
+    result = multiply(num1, num2)
+  elif operator == "/":
+    result = divide(num1, num2)
+  else:
+    result = "Invalid operator."
+
+  # Print the result
+  print(f"{num1} {operator} {num2} = {result}")
+
+  # Ask user if they want to continue
+  choice = input("Do you want to perform another calculation? (y/n): ")
+  if choice.lower() != "y":
+    break
+
+print("Thank you for using the calculator!")
